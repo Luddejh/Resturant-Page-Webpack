@@ -1,0 +1,8 @@
+.menu {
+ margin: 20px;
+}
+
+.menu:hover {
+ color: red;
+}
+

@@ -1,0 +1,7 @@
+.contact {
+ margin: 20px;
+}
+
+.contact:hover {
+ color: red;
+}
