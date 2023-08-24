@@ -3,15 +3,16 @@ import createHeadLineContent from './main.js';
 import createContact from './tabs/contact.js';
 import createHome from './tabs/home.js';
 import createMenu from './tabs/menu.js';
-import indian from '/home/ludaga/Resturant-Page-Webpack/src/images/indian.jpg';
-import test from '/home/ludaga/Resturant-Page-Webpack/src/images/showimage.js';
+import showImage from '/home/ludaga/Resturant-Page-Webpack/src/images/showimage.js';
+import { appendContactContent } from './tabs/contact.js';
+import { removeMainContent } from './tabs/contact.js';
 
 function components() {
   createContact();
   createHome();
   createMenu();
   createHeadLineContent();
-  test();
+  showImage();
 }
 
 components();
@@ -37,7 +38,8 @@ function showHomeContent() {
 }
 
 function showContactContent() {
- console.log('Contact')
+ removeMainContent();
+ appendContactContent();
 }
 
 
