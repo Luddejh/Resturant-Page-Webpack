@@ -1,7 +1,6 @@
-.contact {
- margin: 20px;
+.tabcontent {
+ display: flex;
+ justify-content: center;
+ gap: 30px;
 }
 
-.contact:hover {
- color: red;
-}

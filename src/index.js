@@ -8,11 +8,9 @@ import { create } from "lodash";
 
 pageLoad();
 
-
 const homeButton = document.querySelector('.Home');
 const menuButton = document.querySelector('.Menu');
 const contactButton = document.querySelector('.Contact');
-
 
 homeButton.addEventListener('click', openPage.bind(event, 'homeContent'));
 menuButton.addEventListener('click',  openPage.bind(event, 'menuContent'));
@@ -22,6 +20,7 @@ function openPage(evt, page) {
  createHomeContent();
  createContactContent();
  createMenuContent();
+ console.log(evt);
 
  let tabcontent = document.querySelectorAll('.tabcontent');
   for(let i = 0; i < tabcontent.length; i++) {
@@ -37,15 +36,3 @@ function openPage(evt, page) {
   createContactContent();
  }
 } 
-
-
-
-
-
-
-
-/* functions for viewing the content when the user clicks on one of the tabs
-createHomeContent();
-createMenuContent();
-createContactContent();
-*/

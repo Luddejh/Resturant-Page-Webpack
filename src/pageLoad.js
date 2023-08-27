@@ -1,5 +1,6 @@
 import { create } from "lodash";
 import { openTabContent } from ".";
+import css from '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/main.css';
 
 export const pageLoad = () => {
  const content = document.querySelector('#content');
