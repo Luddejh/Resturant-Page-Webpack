@@ -1,13 +1,13 @@
-import '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/menu.css'
+import css from '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/menu.css';
+
+export const createMenuContent = () => {
+  const content = document.querySelector('#content');
+  const menuContent = document.createElement('h5');
+  menuContent.setAttribute('class', 'tabcontent');
+  menuContent.setAttribute('id','menuContent');
+  menuContent.innerHTML = 'FUTURE MENU CONTENT';
+ 
 
 
-export default function createContact() {
- const content = document.querySelector('.tabs');
- const menu = document.createElement('h2');
-
- menu.innerHTML = "MENU";
- menu.setAttribute('class', "menu");
-
- content.appendChild(menu);
- return menu
+  content.appendChild(menuContent);
 }

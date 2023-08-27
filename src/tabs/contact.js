@@ -1,35 +1,13 @@
-import { create } from 'lodash';
-import '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/contact.css'
+import css from '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/contact.css'; 
 
+export const createContactContent = () => {
+  const content = document.querySelector('#content');
+  const contactContent = document.createElement('h5');
+  contactContent.setAttribute('class', 'tabcontent');
+  contactContent.setAttribute('id', 'contactContent');
+  contactContent.innerHTML = 'FUTURE CONTACT CONTENT';
 
-export default function createContact() {  
- const content = document.querySelector('.tabs');
- const contact = document.createElement('h2');
-   
- contact.innerHTML = "CONTACT";
-
- contact.setAttribute('class', "contact");
- content.appendChild(contact);
-
- return content
+  content.appendChild(contactContent);
 }
 
-export function appendContactContent() {
- const maincontainer = document.querySelector('#content');
-
- const contactContainer = document.createElement('div');
- contactContainer.setAttribute('class', 'contactContainer');
-
- maincontainer.appendChild(contactContainer);
-}
-
-
-//function for removing the content when the user clicks on the contact tab.
-export function removeMainContent() {
- const removeContent = document.querySelector('.mainContentContainer');
- const removeImage = document.querySelector('.indianFood');
-
- removeContent.remove();
- removeImage.remove();
-}
 

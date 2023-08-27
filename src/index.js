@@ -1,47 +1,51 @@
-import _ from 'lodash';
-import createHeadLineContent from './main.js';
-import createContact from './tabs/contact.js';
-import createHome from './tabs/home.js';
-import createMenu from './tabs/menu.js';
-import showImage from '/home/ludaga/Resturant-Page-Webpack/src/images/showimage.js';
-import { appendContactContent } from './tabs/contact.js';
-import { removeMainContent } from './tabs/contact.js';
+import { createHomeContent } from "./tabs/home";
+import { createMenuContent } from "./tabs/menu";
+import { createContactContent } from './tabs/contact';
+import { pageLoad } from "./pageLoad";
+import { onClickButtons } from "./pageLoad";
+import css from '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/main.css';
+import { create } from "lodash";
 
-function components() {
-  createContact();
-  createHome();
-  createMenu();
-  createHeadLineContent();
-  showImage();
-}
+pageLoad();
 
-components();
 
-const home = document.querySelector('.home');
-const contact = document.querySelector('.contact');
-const menu = document.querySelector('.menu');
+const homeButton = document.querySelector('.Home');
+const menuButton = document.querySelector('.Menu');
+const contactButton = document.querySelector('.Contact');
 
-function eventListeners() {
- home.addEventListener('click', showHomeContent);
- contact.addEventListener('click', showContactContent);
- menu.addEventListener('click', showMenuContent);
-}
 
-eventListeners();
+homeButton.addEventListener('click', openPage.bind(event, 'homeContent'));
+menuButton.addEventListener('click',  openPage.bind(event, 'menuContent'));
+contactButton.addEventListener('click', openPage.bind(event, 'contactContent'));
 
-function showMenuContent() {
-  console.log('Menu');
-}
+function openPage(evt, page) {
+ createHomeContent();
+ createContactContent();
+ createMenuContent();
 
-function showHomeContent() {
- console.log('Home');
-}
+ let tabcontent = document.querySelectorAll('.tabcontent');
+  for(let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
+  }
 
-function showContactContent() {
- removeMainContent();
- appendContactContent();
-}
+ //viewing the tab that the user is clicking 
+ if(evt === 'homeContent') {
+  createHomeContent();
+ } else if (evt === 'menuContent') {
+  createMenuContent();
+ } else if (evt === 'contactContent') {
+  createContactContent();
+ }
+} 
 
 
 
 
+
+
+
+/* functions for viewing the content when the user clicks on one of the tabs
+createHomeContent();
+createMenuContent();
+createContactContent();
+*/

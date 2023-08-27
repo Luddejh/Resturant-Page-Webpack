@@ -1,9 +1,4 @@
-.tabs { 
- display: flex;
- flex-direction: row;
- justify-content: center;
+.home { 
+ margin: 20px; 
 }
 
-.home:hover {
- color: red;
-}

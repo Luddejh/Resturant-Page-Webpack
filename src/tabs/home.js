@@ -1,12 +1,11 @@
-import '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/home.css';
+import css from '/home/ludaga/Resturant-Page-Webpack/src/tabs/styles/home.css';
 
-export default function createContact() {
- const content = document.querySelector('.tabs');
- const home = document.createElement('h2');
+export const createHomeContent = () => {
+  const content = document.querySelector('#content');
+  const homeContent = document.createElement('h5');
+  homeContent.setAttribute('class', 'tabcontent');
+  homeContent.setAttribute('id', 'homeContent');
+  homeContent.innerHTML = 'FUTURE HOME CONTENT';
 
- home.innerHTML = "HOME";
-
- home.setAttribute('class', "home");
- content.appendChild(home);
- return home
+  content.appendChild(homeContent);
 }
